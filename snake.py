@@ -50,7 +50,7 @@ while snake[0] + direction not in limits and snake[0] + direction <= 28 and snak
     
     sleep(velocity) 
     
-    if b < button_a.get_presses():
+    if b < button_b.get_presses():
         if direction == haut: 
             direction = droite
         elif direction == droite: 
@@ -59,7 +59,7 @@ while snake[0] + direction not in limits and snake[0] + direction <= 28 and snak
             direction = gauche
         elif direction == gauche: 
             direction = haut
-    if a < button_b.get_presses():
+    if a < button_a.get_presses():
         if direction == haut: 
             direction = gauche
         elif direction == droite: 
@@ -72,12 +72,3 @@ while snake[0] + direction not in limits and snake[0] + direction <= 28 and snak
 display.show(Image.SAD)
 sleep(1000)
 display.scroll(str(score))
-
-    
-
-    
-
-            
-
-
-
