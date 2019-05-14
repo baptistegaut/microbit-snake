@@ -12,7 +12,7 @@ bas = 6
 direction = droite
 vitesse = 500
 limites = [5, 11, 17, 23]
-apple = random.choice([idx for idx,e in enumerate(listMaze) if e == "0"])
+apple = 14
 score = 0
 
 
