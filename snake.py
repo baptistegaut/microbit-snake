@@ -10,17 +10,11 @@ gauche = -1
 haut = -6
 bas = 6
 direction = droite
-vitesse = 500
+tempsDeDeplacement = 500
 limites = [5, 11, 17, 23]
 apple = 14
 score = 0
 
-
-def append0(snake):
-    snake.reverse()
-    snake.append(0)
-    snake.reverse()
-    return snake
 
 def randomApple(listMaze):
     return random.choice([idx for idx,e in enumerate(listMaze) if e == "0"])
@@ -33,8 +27,7 @@ while snake[0] + direction not in limites and snake[0] + direction <= 28 and sna
     
     if apple == snake[0]:
         score +=1
-        snake = append0(snake)
-        snake[0] = apple + direction
+        snake = [apple + direction] + snake
         apple = randomApple(listMaze)
     else:
         listMaze[snake[-1]] = "0"
@@ -50,7 +43,7 @@ while snake[0] + direction not in limites and snake[0] + direction <= 28 and sna
     a = button_a.get_presses()
     b = button_b.get_presses()
     
-    sleep(vitesse) 
+    sleep(tempsDeDeplacement) 
     
     if b < button_b.get_presses():
         if direction == haut: 
@@ -74,3 +67,4 @@ while snake[0] + direction not in limites and snake[0] + direction <= 28 and sna
 display.show(Image.SAD)
 sleep(1000)
 display.scroll(str(score))
+
